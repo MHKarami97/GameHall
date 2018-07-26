@@ -5,24 +5,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:persianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="GameHall.MainWindow"
-        mc:Ignorable="d" d:DesignWidth="1280"    
+        mc:Ignorable="d"
+        d:DesignWidth="1280"    
         Icon="Images\icon.ico" UseLayoutRounding="True"
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Title="سالن بازی"
         MinHeight="600"
-        MinWidth="700" Height="507.333">
+        MinWidth="700"
+        Height="507.333">
     <telerik:RadRibbonWindow.Resources>
     </telerik:RadRibbonWindow.Resources>
     <Grid x:Name="RadRichTextBoxParent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto" MinHeight="61.667"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Opacity="0.6" Source="IMages/backMain.JPG" Margin="0,33,0,-0.333" VerticalAlignment="Top" Stretch="Fill" Grid.RowSpan="3" Height="541" Width="1276"/>
+        <Image Opacity="0.6" Source="IMages/backMain.JPG" Margin="0,54,0,798.667" />
         <telerik:RadRichTextBoxRibbonUI x:Name="Ribbon" FlowDirection="RightToLeft" ApplicationButtonContent="منو" BackstageClippingElement="{Binding ElementName=RadRichTextBoxParent}" CollapseThresholdSize="50,50" DataContext="{Binding Commands, ElementName=radRichTextBox}" FontFamily="Titr" Height="163"
-                                        Grid.Row="0" Grid.RowSpan="2" >
+                                        Grid.Row="0" >
             <telerik:RadRichTextBoxRibbonUI.Resources>
                 <telerik:EditingContextTypeToBoolConverter x:Key="EditingContextTypeToBoolConverter"/>
             </telerik:RadRichTextBoxRibbonUI.Resources>
@@ -170,28 +170,19 @@
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="پذیرش بازی جدید" LargeImage="Images/plus-circle.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="پذیرش" telerik:ScreenTip.Title="پذیرش" FontSize="11" Click="BtnNew"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="بازی">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازی جدید" LargeImage="Images/gamepad-variant.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="رزرو موقت" telerik:ScreenTip.Title="رزرو موقت" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازی جدید" LargeImage="Images/gamepad-variant.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازی جدید" telerik:ScreenTip.Title="رزرو موقت" FontSize="10"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="صندوق">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست پرداختی ها" LargeImage="Images/history.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="صندوق" telerik:ScreenTip.Title="صندوق" FontSize="11"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="درحال انجام">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده بازی های در حال انجام" LargeImage="Images/arrange-bring-to-front.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بیماران" telerik:ScreenTip.Title="بیماران" FontSize="11"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده بازی های در حال انجام" LargeImage="Images/arrange-bring-to-front.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="درحال انجام" telerik:ScreenTip.Title="درحال انجام" FontSize="11"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="بازیکن ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/account-group.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="معاینات" telerik:ScreenTip.Title="معاینات" FontSize="11" Click="ShowAllCheckUpBtn"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/account-group.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازیکن" telerik:ScreenTip.Title="بازیکن" FontSize="11" Click="ShowAllCheckUpBtn"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="خدمات">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست خدمات قابل ارائه" LargeImage="Images/heart.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="خدمات" telerik:ScreenTip.Title="خدمات" FontSize="11"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="بانک تصاویر">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست کامل عکس ها" LargeImage="Images/hospital-4.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بانک تصاویر" telerik:ScreenTip.Title="بانک تصاویر" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="اسناد دیجیتال">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست کامل اسناد بیمارستان" LargeImage="Images/report-1.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="اسناد دیجیتال" telerik:ScreenTip.Title="اسناد دیجیتال" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="دفتر چک">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست کامل چک های دریافتی و پرداختی" LargeImage="Images/atomic.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="دفتر چک" telerik:ScreenTip.Title="دفتر چک" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست خدمات قابل ارائه" LargeImage="Images/room-service.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="خدمات" telerik:ScreenTip.Title="خدمات" FontSize="11"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="ماشین حساب">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="باز کردن ماشین حساب" LargeImage="Images/calculator.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="ماشین حساب" telerik:ScreenTip.Title="ماشین حساب" FontSize="10" Click="OpenCalculatorBtn"/>
@@ -200,115 +191,65 @@
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="خروج از نرم افزار" LargeImage="Images/arrow-left-bold-circle.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="خروج" telerik:ScreenTip.Title="خروج" FontSize="11" Click="BtnClose"/>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="بیماران">
-                <telerik:RadRibbonGroup Header="افزودن بیمار">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن بیمار به بیمارستان" LargeImage="images/hospital-2.png" Size="Large" Text="بیمار جدید" telerik:ScreenTip.Title="بیمار جدید" FontSize="10" Click="AddUserBtn"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="لیست بیماران">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل بیماران" LargeImage="images/book.png" Size="Large" Text="بیماران" telerik:ScreenTip.Title="بیمارن" FontSize="10" Margin="0,0,0,0.333" Click="ShowUserListBtn"/>
-                </telerik:RadRibbonGroup>
-            </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="پزشکان">
-                <telerik:RadRibbonGroup Header="افزودن پزشک">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن پزشک به بیمارستان" LargeImage="images/nurse-1.png" Size="Large" Text="پزشک جدید" telerik:ScreenTip.Title="پزشک جدید" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="لیست پزشکان">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل پزشکان" LargeImage="images/book.png" Size="Large" Text="پزشکان" telerik:ScreenTip.Title="پزشکان" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-            </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="امور مالی">
-                <telerik:RadRibbonGroup Header="مدیریت حساب ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل حساب ها" LargeImage="images/report-1.png" Size="Large" Text="حساب ها" telerik:ScreenTip.Title="حساب ها" FontSize="10"/>
+                <telerik:RadRibbonGroup Header="افزودن پرداختی">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="پرداختی جدید" LargeImage="images/plus-circle.png" Size="Large" Text="پرداخت جدید" telerik:ScreenTip.Title="بیمار جدید" FontSize="10" Click="AddUserBtn"/>
                 </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="مدیریت چک ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل چک ها" LargeImage="images/report-1.png" Size="Large" Text="چک ها" telerik:ScreenTip.Title="چک ها" FontSize="10"/>
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن چک جدید" LargeImage="images/hospital-2.png" Size="Large" Text="چک جدید" telerik:ScreenTip.Title="چک جدید" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="درآمد امروز">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده کل درآمد تا این لحظه" LargeImage="images/report-1.png" Size="Large" Text="درآمد" telerik:ScreenTip.Title="درآمد" FontSize="10"/>
+                <telerik:RadRibbonGroup Header="لیست پرداختی ها">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل پرداختی ها" LargeImage="images/arrange-bring-to-front.png" Size="Large" Text="پرداخت ها" telerik:ScreenTip.Title="پرداخت ها" FontSize="10" Margin="0,0,0,0.333" Click="ShowUserListBtn"/>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="معاینات">
-                <telerik:RadRibbonGroup Header="لیست معاینات">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل معاینه های انجام گرفته" LargeImage="images/x-rays.png" Size="Large" Text="معاینات" telerik:ScreenTip.Title="معاینات" FontSize="10"/>
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل معاینه ها تا این لحظه" LargeImage="images/syringe.png" Size="Large" Text="معاینات امروز" telerik:ScreenTip.Title="معاینات امروز" FontSize="10"/>
+            <telerik:RadRibbonTab Header="بازی ها">
+                <telerik:RadRibbonGroup Header="افزودن بازی جدید">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن بازی به کلوپ" LargeImage="images/plus-circle.png" Size="Large" Text="بازی جدید" telerik:ScreenTip.Title="بازی جدید" FontSize="10"/>
                 </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="مدیریت معاینات">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن نوع معاینه جدید" LargeImage="images/hospital-2.png" Size="Large" Text="افزودن" telerik:ScreenTip.Title="افزودن" FontSize="10"/>
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل انواع معاینه ها" LargeImage="images/stethoscope.png" Size="Large" Text="انواع معاینات" telerik:ScreenTip.Title="انواع معاینات" FontSize="10"/>
+                <telerik:RadRibbonGroup Header="لیست بازی ها">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل بازی های قابل انجام" LargeImage="images/view-list.png" Size="Large" Text="بازی" telerik:ScreenTip.Title="بازی" FontSize="10"/>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="بازیکن ها">
+                <telerik:RadRibbonGroup Header="افزودن بازیکن">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن بازیکن به کلوپ" LargeImage="images/plus-circle.png" Size="Large" Text="بازیکن جدید" telerik:ScreenTip.Title="بازیکن جدید" FontSize="10"/>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="لیست بازیکنها">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل بازیکن ها" LargeImage="images/view-list.png" Size="Large" Text="بازیکن" telerik:ScreenTip.Title="بازیکن" FontSize="10"/>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="تمام شده ها">
+                <telerik:RadRibbonGroup Header="لیست بازی ها">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل بازی های انجام گرفته" LargeImage="images/view-list.png" Size="Large" Text="بازی ها" telerik:ScreenTip.Title="بازی ها" FontSize="10"/>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="گزارشات">
-                <telerik:RadRibbonGroup Header="گزارش کارکرد سیستم پذیرش">
+                <telerik:RadRibbonGroup Header="گزارش کارکرد سیستم کلوپ">
                     <telerik:RadCollapsiblePanel>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس تاریخ"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس پزشک"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس بخش"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس دستیار"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس علت مراجعه"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس دوره درمانی"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس بیمه"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس نحوه پرداخت"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس شیفت کاری"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس کاربر"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس معرف"/>
-                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/report.png" Text="بر اساس خدمت"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس تاریخ"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس نحوه پرداخت"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس شیفت کاری"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس کاربر"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس معرف"/>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="images/file-chart.png" Text="بر اساس خدمت"/>
                     </telerik:RadCollapsiblePanel>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="گزارش ورود به نرم افزار">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ورود به نرم افزار" LargeImage="Images/magnifying-glass.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="ورود" telerik:ScreenTip.Title="ورود" FontSize="11"/>
-                </telerik:RadRibbonGroup>
-            </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="اورژانس">
-                <telerik:RadRibbonGroup Header="ارسال آمبولانس">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="فرستادن آمبولانس" LargeImage="images/ambulance.png" Size="Large" Text="آمبولانس" telerik:ScreenTip.Title="آمبولانس" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="لیست آمبولانس ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده تمام آمبولانس های موجود" LargeImage="images/book.png" Size="Large" Text="آمبولانس ها" telerik:ScreenTip.Title="آمبولانس ها" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="افزودن آمبولانس">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="وویرایش و اضافه کردن آمبولانس" LargeImage="images/hospital-1.png" Size="Large" Text="افزودن" telerik:ScreenTip.Title="افزودن" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="راننده ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش و افزودن راننده و کمک راننده" LargeImage="images/hospital-2.png" Size="Large" Text="راننده ها" telerik:ScreenTip.Title="راننده ها" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="شیفت های کاری">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش شیفت های کاری راننده ها" LargeImage="images/emergency-kit.png" Size="Large" Text="شیفت ها" telerik:ScreenTip.Title="شیفت ها" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ورود به نرم افزار" LargeImage="Images/clipboard-account.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="ورود" telerik:ScreenTip.Title="ورود" FontSize="11"/>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="تنظیمات">
-                <telerik:RadRibbonGroup Header="لیست خدمات">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش خدمات قابل انجام" LargeImage="images/x-rays.png" Size="Large" Text="خدمات" telerik:ScreenTip.Title="خدمات" FontSize="10"/>
-                </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="شیفت کاری">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش شیفت های کاری بیمارستان" LargeImage="images/emergency-kit.png" Size="Large" Text="شیفت ها" telerik:ScreenTip.Title="شیفت ها" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش شیفت های کاری کلوپ" LargeImage="images/clock-outline.png" Size="Large" Text="شیفت ها" telerik:ScreenTip.Title="شیفت ها" FontSize="10"/>
                 </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="تخت ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش تخت های بیمارستان" LargeImage="images/bed.png" Size="Large" Text="تخت ها" telerik:ScreenTip.Title="تخت ها" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="گروه کاربری">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش گروه های کاربری نرم افزار" LargeImage="images/tablets.png" Size="Large" Text="گروه ها" telerik:ScreenTip.Title="گروه ها" FontSize="10"/>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="شخصی">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش تنظیمات شخصی" LargeImage="images/hospital-3.png" Size="Large" Text="تنظیمات" telerik:ScreenTip.Title="تنظیمات" FontSize="10"/>
+                <telerik:RadRibbonGroup Header="وسیله ها">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش وسیله های کلوپ" LargeImage="images/toolbox.png" Size="Large" Text="وسیله ها" telerik:ScreenTip.Title="وسیله ها" FontSize="10"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="نرم افزار">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش تنظیمات کلی نرم افزار" LargeImage="images/hospital-4.png" Size="Large" Text="تنظیمات" telerik:ScreenTip.Title="تنظیمات" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="ویرایش تنظیمات کلی نرم افزار" LargeImage="images/settings-outline.png" Size="Large" Text="تنظیمات" telerik:ScreenTip.Title="تنظیمات" FontSize="10"/>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
         </telerik:RadRichTextBoxRibbonUI>
-        <Rectangle Fill="#FFDEC8AE" Margin="0,4,0,-0.333" Grid.Row="2"/>
-        <telerik:Label x:Name="DayLbl" Content="روز" Margin="1201,4,7,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label x:Name="DayNameLbl" Content="روز" Margin="1162,4,59,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label x:Name="MonthLbl" Content="روز" Margin="1102,4,85,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label x:Name="YearLbl" Content="سال" Margin="1053,4,140,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label Content="سمت: " Margin="828,4,394,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label x:Name="UserLbl" Content="مدیر" Margin="754,4,431,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <telerik:Label Content="نام کاربری: " Margin="956,3,254,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma" RenderTransformOrigin="0.5,0.569"/>
-        <telerik:Label x:Name="UserNameLbl" Content="نام" Margin="879,4,325,-0.333" Grid.Row="2" FlowDirection="RightToLeft" FontFamily="Tahoma"/>
-        <persianDateControls:PersianCalendar x:Name="PersianCalender" HorizontalAlignment="Left" Height="196" Margin="10,168,0,0" Grid.Row="1" VerticalAlignment="Top" Width="198" Background="#FFECF3F7" BorderBrush="#FF020230" Foreground="#FF81B6B2"/>
-        <telerik:Label x:Name="HourLbl" Content="h" HorizontalAlignment="Left" Margin="26,369,0,0" Grid.Row="1" VerticalAlignment="Top" Height="94" Width="83" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
-        <telerik:Label x:Name="DotTime" Content=":" HorizontalAlignment="Left" Margin="86,369,0,0" Grid.Row="1" VerticalAlignment="Top" Height="94" Width="32" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
-        <telerik:Label x:Name="MinLbl" Content="m" HorizontalAlignment="Left" Margin="100,369,0,0" Grid.Row="1" VerticalAlignment="Top" Height="94" Width="129" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
+        <persianDateControls:PersianCalendar x:Name="PersianCalender" HorizontalAlignment="Left" Height="196" Margin="10,168,0,0" VerticalAlignment="Top" Width="198" Background="#FFECF3F7" BorderBrush="#FF020230" Foreground="#FF81B6B2"/>
+        <telerik:Label x:Name="HourLbl" Content="h" HorizontalAlignment="Left" Margin="26,369,0,0" VerticalAlignment="Top" Height="94" Width="83" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
+        <telerik:Label x:Name="DotTime" Content=":" HorizontalAlignment="Left" Margin="86,369,0,0" VerticalAlignment="Top" Height="94" Width="32" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
+        <telerik:Label x:Name="MinLbl" Content="m" HorizontalAlignment="Left" Margin="100,369,0,0" VerticalAlignment="Top" Height="94" Width="129" FontFamily="Digital-7" FontWeight="Bold" FontSize="72" Foreground="#FF2929E4"/>
     </Grid>
 </telerik:RadRibbonWindow>

@@ -2367,6 +2367,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\clipboard-account.png" />
+    <Resource Include="Images\clock-outline.png" />
+    <Resource Include="Images\settings-outline.png" />
+    <Resource Include="Images\toolbox.png" />
+    <Resource Include="Images\file-chart.png" />
+    <Resource Include="Images\view-list.png" />
+    <Resource Include="Images\room-service.png" />
     <Resource Include="Images\account-group.png" />
     <Resource Include="Images\arrange-bring-to-front.png" />
     <Resource Include="Images\calculator.png" />

@@ -42,11 +42,6 @@ namespace GameHall
             GetIcon1().Icon = Properties.Resources.TelerikWord;
             GetIcon1().Visible = true;
 
-            DayLbl.Content = PersianCalender.SelectedDate.PersianDayOfWeek;
-            DayNameLbl.Content = PersianCalender.SelectedDate.Day;
-            MonthLbl.Content = PersianCalender.SelectedDate.MonthAsPersianMonth;
-            YearLbl.Content = PersianCalender.SelectedDate.Year;
-
             HourLbl.Content = DateTime.Now.Hour;
             MinLbl.Content = DateTime.Now.Minute;
 
