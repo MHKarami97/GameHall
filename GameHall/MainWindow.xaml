@@ -179,7 +179,7 @@
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده بازی های در حال انجام" LargeImage="Images/arrange-bring-to-front.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="درحال انجام" telerik:ScreenTip.Title="درحال انجام" FontSize="11"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="بازیکن ها">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/account-group.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازیکن" telerik:ScreenTip.Title="بازیکن" FontSize="11" Click="ShowAllCheckUpBtn"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/account-group.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازیکن" telerik:ScreenTip.Title="بازیکن" FontSize="11" Click="ShowUserListBtn" />
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="خدمات">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست خدمات قابل ارائه" LargeImage="Images/room-service.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="خدمات" telerik:ScreenTip.Title="خدمات" FontSize="11"/>

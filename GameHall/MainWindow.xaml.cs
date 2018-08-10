@@ -94,10 +94,5 @@ namespace GameHall
         {
             new UserList().Show();
         }
-
-        private void ShowAllCheckUpBtn(object sender, RoutedEventArgs e)
-        {
-            new CheckUpList().Show();
-        }
     }
 }

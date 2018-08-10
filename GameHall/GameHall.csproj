@@ -197,14 +197,8 @@
     <Compile Include="Cash.xaml.cs">
       <DependentUpon>Cash.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdvancedSearch.xaml.cs">
-      <DependentUpon>AdvancedSearch.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CheckUpList.xaml.cs">
-      <DependentUpon>CheckUpList.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -230,17 +224,10 @@
     <Compile Include="UserList.xaml.cs">
       <DependentUpon>UserList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReserveTime.xaml.cs">
-      <DependentUpon>ReserveTime.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
     <Page Include="Cash.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="AdvancedSearch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -267,15 +254,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CheckUpList.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserList.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ReserveTime.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

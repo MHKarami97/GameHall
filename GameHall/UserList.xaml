@@ -8,31 +8,43 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
-        Title="لیست بیماران" Height="600" Width="800">
+        Title="لیست بازیکن ها" Height="600" Width="800"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:05" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
-        <Image HorizontalAlignment="Left" Opacity="0.5" Height="562" Source="images/AddUserBackground.jpg" VerticalAlignment="Top" Width="795" Stretch="Fill" Margin="0,10,-1,-0.333"/>
-        <telerik:RadGridView FlowDirection="RightToLeft" ItemsSource="{Binding Clubs}" AutoGenerateColumns="False" Margin="10,10,10,0" Height="472" VerticalAlignment="Top" >
+        <Rectangle Fill="#FF8DC2E5" HorizontalAlignment="Left" Height="562" Margin="10,10,0,0" VerticalAlignment="Top" Width="785" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="785" MouseDown="MoveWindows">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9BD7F6" Offset="0.697"/>
+                    <GradientStop Color="#FF84FF85" Offset="0.207"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" Opacity="0.5" Height="491" Source="images/AddUserBackground.jpg" VerticalAlignment="Top" Width="785" Stretch="Fill" Margin="10,60,0,0"/>
+        <telerik:RadGridView x:Name="playerList" FlowDirection="RightToLeft" AutoGenerateColumns="False" Margin="30,60,23,0" Height="434" VerticalAlignment="Top" >
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Width="90" DataMemberBinding="{Binding Name}" Header="نام"/>
-                <telerik:GridViewDataColumn Width="90" DataMemberBinding="{Binding Established}" Header="نام خانوادگی"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="نام پدر"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="تاریخ تولد"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="موبایل"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="کدملی"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="بیمه"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="گروه"/>
-                <telerik:GridViewDataColumn Width="80" DataMemberBinding="{Binding Name}" Header="وضعیت"/>
+                <telerik:GridViewDataColumn Width="350" DataMemberBinding="{Binding name}" Header="نام"/>
+                <telerik:GridViewDataColumn Width="370" DataMemberBinding="{Binding lastname}" Header="نام خانوادگی"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="Images/add2.png" Height="64" Margin="720,498,0,0" VerticalAlignment="Top" Width="64"  MouseDown="BtnAdd" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="حذف کردن" Source="Images/remove2.png" Height="64" Margin="386,498,0,0" VerticalAlignment="Top" Width="64"  MouseDown="BtnRemove" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="رفرش لیست" Source="Images/restore2.png" Height="64" Margin="639,498,0,0" VerticalAlignment="Top" Width="64" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اطلاعات کامل" Source="Images/info.png" Height="64" Margin="548,498,0,0" VerticalAlignment="Top" Width="64" Cursor="Hand"/>
-        <TextBox HorizontalAlignment="Left" FlowDirection="RightToLeft" Height="23" Margin="143,519,0,0" TextWrapping="Wrap" Text="نام خانوادگی" VerticalAlignment="Top" Width="100"/>
-        <Label Content="جستجو" HorizontalAlignment="Left" Margin="353,515,0,0" VerticalAlignment="Top" Width="51" FontFamily="Titr" Height="32"/>
-        <TextBox HorizontalAlignment="Left" FlowDirection="RightToLeft" Height="23" Margin="248,519,0,0" TextWrapping="Wrap" Text="نام" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="38,519,0,0" TextWrapping="Wrap" Text="کد ملی" VerticalAlignment="Top" Width="100"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="حذف کردن" Source="Images/magnifying-glass.png" Height="23" Margin="10,519,0,0" VerticalAlignment="Top" Width="23" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="پرینت" Source="Images/print.png" Height="64" Margin="457,498,0,0" VerticalAlignment="Top" Width="64" Cursor="Hand"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,543,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="785">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.9">
+                    <GradientStop Color="#FF9BD7F6" Offset="0.303"/>
+                    <GradientStop Color="#FF84FF85" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="Images/cancel.png" Height="45" Margin="725,10,0,0" VerticalAlignment="Top" Width="52" MouseDown="BtnCancel" Cursor="Hand"/>
+        <Label Content="لیست بازیکن ها" HorizontalAlignment="Left" Margin="374,20,0,0" VerticalAlignment="Top" Width="112" FontWeight="Bold" FontFamily="B Yekan" Foreground="#FF632929" Height="35"/>
     </Grid>
 </Window>

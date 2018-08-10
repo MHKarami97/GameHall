@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Input;
+using GameHall.DataBase;
 
 namespace GameHall
 {
@@ -14,17 +16,18 @@ namespace GameHall
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-                                 
+            var db=new GameHalldbEntities();
+            playerList.ItemsSource = db.players.ToList();
         }
 
-        private void BtnRemove(object sender, MouseButtonEventArgs e)
+        private void MoveWindows(object sender, MouseButtonEventArgs e)
         {
-            
+            DragMove();
         }
 
-        private void BtnAdd(object sender, MouseButtonEventArgs e)
+        private void BtnCancel(object sender, MouseButtonEventArgs e)
         {
-            
+            Close();
         }
     }
 }
