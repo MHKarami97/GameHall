@@ -169,8 +169,8 @@
                 <telerik:RadRibbonGroup Header="افزودن">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="پذیرش بازی جدید" LargeImage="Images/plus-circle.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="پذیرش" telerik:ScreenTip.Title="پذیرش" FontSize="11" Click="BtnNew"/>
                 </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="بازی">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازی جدید" LargeImage="Images/gamepad-variant.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازی جدید" telerik:ScreenTip.Title="رزرو موقت" FontSize="10"/>
+                <telerik:RadRibbonGroup Header="بازیکن">
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/gamepad-variant.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازیکن جدید" telerik:ScreenTip.Title="بازیکن جدید" FontSize="10" Click="BtnNewUser"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="صندوق">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست پرداختی ها" LargeImage="Images/history.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="صندوق" telerik:ScreenTip.Title="صندوق" FontSize="11"/>
@@ -193,7 +193,7 @@
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="امور مالی">
                 <telerik:RadRibbonGroup Header="افزودن پرداختی">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="پرداختی جدید" LargeImage="images/plus-circle.png" Size="Large" Text="پرداخت جدید" telerik:ScreenTip.Title="بیمار جدید" FontSize="10" Click="AddUserBtn"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="پرداختی جدید" LargeImage="images/plus-circle.png" Size="Large" Text="پرداخت جدید" telerik:ScreenTip.Title="پرداخت جدید" FontSize="10"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="لیست پرداختی ها">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل پرداختی ها" LargeImage="images/arrange-bring-to-front.png" Size="Large" Text="پرداخت ها" telerik:ScreenTip.Title="پرداخت ها" FontSize="10" Margin="0,0,0,0.333" Click="ShowUserListBtn"/>
@@ -201,7 +201,7 @@
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="بازی ها">
                 <telerik:RadRibbonGroup Header="افزودن بازی جدید">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن بازی به کلوپ" LargeImage="images/plus-circle.png" Size="Large" Text="بازی جدید" telerik:ScreenTip.Title="بازی جدید" FontSize="10"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="اضافه کردن بازی به کلوپ" LargeImage="images/plus-circle.png" Size="Large" Text="بازی جدید" telerik:ScreenTip.Title="بازی جدید" FontSize="10" Click="BtnNewUser"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="لیست بازی ها">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده لیست کامل بازی های قابل انجام" LargeImage="images/view-list.png" Size="Large" Text="بازی" telerik:ScreenTip.Title="بازی" FontSize="10"/>

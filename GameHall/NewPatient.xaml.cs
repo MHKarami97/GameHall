@@ -26,8 +26,11 @@ namespace GameHall
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
-            TimeText.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute;
-            DateText.Text = main.PersianCalender.SelectedDate.Year + "/" + main.PersianCalender.SelectedDate.Month + "/" + main.PersianCalender.SelectedDate.Day;
+            TimeText.Text = Convert.ToString(DateTime.Now.Hour);
+            TimeMin.Text = Convert.ToString(DateTime.Now.Minute);
+            DateYear.Text = Convert.ToString(main.PersianCalender.SelectedDate.Year);
+            DateMonth.Text = Convert.ToString(main.PersianCalender.SelectedDate.Month);
+            DateDay.Text = Convert.ToString(main.PersianCalender.SelectedDate.Day);
         }
 
         private void BtnCancel(object sender, MouseButtonEventArgs e)

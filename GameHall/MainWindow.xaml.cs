@@ -39,7 +39,7 @@ namespace GameHall
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            GetIcon1().Icon = Properties.Resources.TelerikWord;
+            //GetIcon1().Icon = Properties.Resources.TelerikWord;
             GetIcon1().Visible = true;
 
             HourLbl.Content = DateTime.Now.Hour;
@@ -67,14 +67,14 @@ namespace GameHall
             new NewPatient().Show();
         }
 
+        private void BtnNewUser(object sender, RoutedEventArgs e)
+        {
+            new AddUser().Show();
+        }
+
         private void OpenSiteBtn(object sender, RoutedEventArgs e)
         {
             Process.Start("https://shop.itarfand.com");
-        }
-
-        private void AddUserBtn(object sender, RoutedEventArgs e)
-        {
-            new AddUser().Show();
         }
 
         private void OpenCalculatorBtn(object sender, RoutedEventArgs e)

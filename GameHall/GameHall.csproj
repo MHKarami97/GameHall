@@ -50,7 +50,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon %2864%29.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -2107,11 +2108,6 @@
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Page Include="Cash.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -2264,81 +2260,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <Resource Include="SampleData\SampleWordDocument.docx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\TelerikWord.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\MainBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\aids.png" />
-    <Resource Include="Images\ambulance.png" />
-    <Resource Include="Images\apple.png" />
-    <Resource Include="Images\atomic.png" />
-    <Resource Include="Images\bed.png" />
-    <Resource Include="Images\book.png" />
-    <Resource Include="Images\cardiogram.png" />
-    <Resource Include="Images\computer.png" />
-    <Resource Include="Images\dna.png" />
-    <Resource Include="Images\dropper.png" />
-    <Resource Include="Images\electrocardiogram.png" />
-    <Resource Include="Images\emergency-kit.png" />
-    <Resource Include="Images\eye.png" />
-    <Resource Include="Images\flag.png" />
-    <Resource Include="Images\flask.png" />
-    <Resource Include="Images\folder.png" />
-    <Resource Include="Images\heart.png" />
-    <Resource Include="Images\hospital-1.png" />
-    <Resource Include="Images\hospital-2.png" />
-    <Resource Include="Images\hospital-3.png" />
-    <Resource Include="Images\hospital-4.png" />
-    <Resource Include="Images\hospital.png" />
-    <Resource Include="Images\lungs.png" />
-    <Resource Include="Images\magnifying-glass.png" />
-    <Resource Include="Images\medical-kit.png" />
-    <Resource Include="Images\medicine-1.png" />
-    <Resource Include="Images\medicine-2.png" />
-    <Resource Include="Images\medicine-3.png" />
-    <Resource Include="Images\medicine.png" />
-    <Resource Include="Images\microscope.png" />
-    <Resource Include="Images\molecule.png" />
-    <Resource Include="Images\nurse-1.png" />
-    <Resource Include="Images\nurse.png" />
-    <Resource Include="Images\pills.png" />
-    <Resource Include="Images\placeholder.png" />
-    <Resource Include="Images\report-1.png" />
-    <Resource Include="Images\report.png" />
-    <Resource Include="Images\scalpel.png" />
-    <Resource Include="Images\science.png" />
-    <Resource Include="Images\smartphone.png" />
-    <Resource Include="Images\stethoscope.png" />
-    <Resource Include="Images\strip.png" />
-    <Resource Include="Images\syringe.png" />
-    <Resource Include="Images\tablets.png" />
-    <Resource Include="Images\test-tube.png" />
-    <Resource Include="Images\thermometer.png" />
-    <Resource Include="Images\tooth.png" />
-    <Resource Include="Images\transfusion.png" />
-    <Resource Include="Images\water.png" />
-    <Resource Include="Images\x-rays.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icon %2864%29.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\LoginBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\NewBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -2385,7 +2312,6 @@
     <Resource Include="Images\backMain.JPG" />
     <Resource Include="Images\money.png" />
     <Resource Include="Images\search2.png" />
-    <Resource Include="Images\SearchBackground.jpg" />
     <Resource Include="Images\search.png" />
     <Resource Include="Images\print.png" />
     <Resource Include="Images\restore2.png" />
