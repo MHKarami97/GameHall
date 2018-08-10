@@ -84,9 +84,9 @@ namespace GameHall
                 var p = new Process {StartInfo = {FileName = "Calc.exe"}};
                 p.Start();
             }
-            catch (Exception ea)
+            catch (Exception e1)
             {
-                System.Windows.MessageBox.Show("Excepton" + ea.Message);
+                System.Windows.MessageBox.Show("Excepton" + e1.Message);
             }
         }
 
