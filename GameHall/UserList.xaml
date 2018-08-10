@@ -20,12 +20,25 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Rectangle Fill="#FF8DC2E5" HorizontalAlignment="Left" Height="562" Margin="10,10,0,0" VerticalAlignment="Top" Width="785" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="785" MouseDown="MoveWindows">
+        <Grid.Resources>
+            <Style TargetType="telerik:GridViewGroupPanel">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate  TargetType="telerik:GridViewGroupPanel">
+                            <Grid>
+                                <TextBlock Text="یکی از ستون ها را کشیده و اینجا رها کنید تا لیست براساس آن مرتب شود" Background="#FF8EC3E5" FontWeight="Normal"  Foreground="#FF634848" FontSize="16" Opacity=".7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Rectangle Fill="#FF8DC2E5" HorizontalAlignment="Left" Height="562" Margin="10,10,0,0" VerticalAlignment="Top" Width="785" RadiusX="10" RadiusY="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="785" MouseDown="MoveWindows">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9BD7F6" Offset="0.697"/>
-                    <GradientStop Color="#FF84FF85" Offset="0.207"/>
+                    <GradientStop Color="#FF6874FF" Offset="0.207"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -36,11 +49,11 @@
                 <telerik:GridViewDataColumn Width="370" DataMemberBinding="{Binding lastname}" Header="نام خانوادگی"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
-        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,543,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="785">
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,543,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="785">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.9">
                     <GradientStop Color="#FF9BD7F6" Offset="0.303"/>
-                    <GradientStop Color="#FF84FF85" Offset="0.793"/>
+                    <GradientStop Color="#FF989AF1" Offset="0.793"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>

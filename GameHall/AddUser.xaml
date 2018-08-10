@@ -16,18 +16,18 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Rectangle Fill="#FF8DC2E5" HorizontalAlignment="Left" Height="380" Margin="10,10,0,0" VerticalAlignment="Top" Width="380" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="380" MouseDown="MoveWindows">
+        <Rectangle Fill="#FF8DC2E5" HorizontalAlignment="Left" Height="380" Margin="10,10,0,0" VerticalAlignment="Top" Width="380" RadiusX="10" RadiusY="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="380" MouseDown="MoveWindows">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9BD7F6" Offset="0.697"/>
-                    <GradientStop Color="#FF84FF85" Offset="0.207"/>
+                    <GradientStop Color="#FF689FFF" Offset="0.207"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
         <Image Source="Images/AddUserBackground.jpg" Opacity=".6" HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="380" Stretch="Fill" Margin="10,60,0,0"/>
         <Label Content="ثبت بازیکن جدید" HorizontalAlignment="Left" Margin="146,21,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontFamily="B Yekan" Foreground="#FF632929"/>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,340,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="380">
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="10,340,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="380">
 
         </Rectangle>
         <TextBox x:Name="name" HorizontalAlignment="Left" FlowDirection="RightToLeft" Height="36" Margin="22,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" FontFamily="B Yekan" FontWeight="Bold" FontSize="20"/>
@@ -42,7 +42,7 @@
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.9">
                     <GradientStop Color="#FF9BD7F6" Offset="0.303"/>
-                    <GradientStop Color="#FF84FF85" Offset="0.793"/>
+                    <GradientStop Color="#FF7BB1F7" Offset="0.793"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
