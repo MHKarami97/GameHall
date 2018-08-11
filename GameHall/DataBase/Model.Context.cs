@@ -27,5 +27,6 @@ namespace GameHall.DataBase
     
         public virtual DbSet<player> players { get; set; }
         public virtual DbSet<playing> playings { get; set; }
+        public virtual DbSet<hallTable> hallTables { get; set; }
     }
 }

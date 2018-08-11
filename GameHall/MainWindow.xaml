@@ -176,7 +176,7 @@
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="لیست پرداختی ها" LargeImage="Images/history.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="صندوق" telerik:ScreenTip.Title="صندوق" FontSize="11"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="درحال انجام">
-                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده بازی های در حال انجام" LargeImage="Images/arrange-bring-to-front.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="درحال انجام" telerik:ScreenTip.Title="درحال انجام" FontSize="11"/>
+                    <telerik:RadRibbonButton telerik:ScreenTip.Description="مشاهده بازی های در حال انجام" LargeImage="Images/arrange-bring-to-front.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="درحال انجام" telerik:ScreenTip.Title="درحال انجام" FontSize="11" Click="SHowPlayingList"/>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="بازیکن ها">
                     <telerik:RadRibbonButton telerik:ScreenTip.Description="افزودن بازیکن جدید" LargeImage="Images/account-group.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="بازیکن" telerik:ScreenTip.Title="بازیکن" FontSize="11" Click="ShowUserListBtn" />

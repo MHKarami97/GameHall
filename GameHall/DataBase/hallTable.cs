@@ -12,15 +12,9 @@ namespace GameHall.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class playing
+    public partial class hallTable
     {
         public int Id { get; set; }
-        public Nullable<int> playerId { get; set; }
-        public string description { get; set; }
-        public System.DateTime startTime { get; set; }
-        public Nullable<System.DateTime> endTime { get; set; }
-        public bool status { get; set; }
-        public Nullable<double> price { get; set; }
-        public int place { get; set; }
+        public int number { get; set; }
     }
 }

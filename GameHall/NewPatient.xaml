@@ -3,32 +3,83 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GameHall"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="GameHall.NewPatient"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
-        Title="پذیرش" Height="300" Width="400">
+        Title="پذیرش" Height="300" Width="400"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:05" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
-        <Image HorizontalAlignment="Left" Opacity="0.4" Height="272" Source="images/AddUserBackground.jpg" VerticalAlignment="Top" Width="394" Stretch="Fill" Margin="0,0,0,-0.333"/>
-        <telerik:TxtDataProvider RichTextBox="{Binding ElementName=radRichTextBox}"/>
-        <TextBox x:Name="TimeMin" HorizontalAlignment="Left" Height="30" Margin="133,48,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="108" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
-        <TextBox x:Name="TimeText" HorizontalAlignment="Left" Height="30" Margin="10,48,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="108" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="16" FontFamily="B Yekan"/>
-        <telerik:Label Content="بازیکن"  HorizontalAlignment="Left" Margin="328,10,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="52" FontWeight="Bold" Height="33" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="10,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontFamily="B Yekan" FontWeight="Bold" FontSize="16"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="images/ok.png" Height="52" Margin="332,210,0,0" VerticalAlignment="Top" Width="50" MouseDown="BtnAdd" Cursor="Hand"/>
-        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="صرف نظر" Source="Images/cancel.png" Height="55" Margin="10,208,0,0" VerticalAlignment="Top" Width="50" MouseDown="BtnCancel" Cursor="Hand"/>
-        <TextBox HorizontalAlignment="Left" FlowDirection="RightToLeft" Height="33" Margin="10,10,0,0" TextWrapping="Wrap" Text="نام بازیکن" VerticalAlignment="Top" Width="230" FontFamily="B Yekan" FontSize="18" IsEnabled="False"/>
-        <Image HorizontalAlignment="Left" Source="Images/add.png" Height="33" Margin="245,10,0,0" VerticalAlignment="Top" Width="33" MouseDown="BtnAdd" Cursor="Hand"/>
-        <telerik:Label Content="شروع (دقیقه/ساعت)" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="241,48,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="143" FontSize="16" FontWeight="Bold"/>
-        <telerik:Label Content="توضیحات"  HorizontalAlignment="Left" Margin="315,170,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="79" FontWeight="Bold" FontSize="16"/>
-        <telerik:Label Content="میز"  HorizontalAlignment="Left" Margin="351,128,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="36" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="DateMonth" HorizontalAlignment="Left" Height="30" Margin="90,83,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="73" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
-        <TextBox x:Name="DateDay" HorizontalAlignment="Left" Height="30" Margin="168,83,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="73" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
-        <telerik:Label Content="تاریخ (روز/ماه/سال)" FlowDirection="RightToLeft"  HorizontalAlignment="Left" Margin="243,83,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="137" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="DateYear" HorizontalAlignment="Left" Height="30" Margin="11,83,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="74" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <Grid.Resources>
+            <Style TargetType="telerik:GridViewGroupPanel">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate  TargetType="telerik:GridViewGroupPanel">
+                            <Grid>
+                                <TextBlock Text="یکی از ستون ها را کشیده و اینجا رها کنید تا لیست براساس آن مرتب شود" Background="#FF8EC3E5" FontWeight="Normal"  Foreground="#FF634848" FontSize="16" Opacity=".7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Rectangle Fill="#FF8CC1E2" HorizontalAlignment="Left" Height="290" Margin="10,10,0,0" VerticalAlignment="Top" Width="390" RadiusX="10" RadiusY="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="390" MouseDown="MoveWindows">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9BD7F6" Offset="0.697"/>
+                    <GradientStop Color="#FF6874FF" Offset="0.207"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" Opacity="0.5" Source="images/AddUserBackground.jpg" Width="390" Stretch="Fill" Margin="10,40,0,0" Height="255" VerticalAlignment="Top"/>
 
+
+        <TextBox x:Name="TimeMin" HorizontalAlignment="Left" Height="30" Margin="142,78,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="108" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <TextBox x:Name="TimeText" HorizontalAlignment="Left" Height="30" Margin="19,78,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="108" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <ComboBox x:Name="table" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="19,148,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="16" FontFamily="B Yekan"/>
+        <telerik:Label Content="بازیکن"  HorizontalAlignment="Left" Margin="338,45,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="52" FontWeight="Bold" Height="33" FontSize="16"/>
+        <TextBox x:Name="information" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="37" Margin="20,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontFamily="B Yekan" FontWeight="Bold" FontSize="16"/>
+        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="images/ok.png" Height="52" Margin="340,238,0,0" VerticalAlignment="Top" Width="50" MouseDown="BtnAdd" Cursor="Hand"/>
+        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="صرف نظر" Source="Images/cancel.png" Height="55" Margin="20,235,0,0" VerticalAlignment="Top" Width="50" MouseDown="BtnCancel" Cursor="Hand"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" FlowDirection="RightToLeft" Height="33" Margin="20,40,0,0" TextWrapping="Wrap" Text="نام بازیکن" VerticalAlignment="Top" Width="230" FontFamily="B Yekan" FontSize="18" IsEnabled="False"/>
+        <Image HorizontalAlignment="Left" Source="Images/add.png" Height="33" Margin="255,40,0,0" VerticalAlignment="Top" Width="33" MouseDown="BtnAdd" Cursor="Hand"/>
+        <telerik:Label Content="شروع (دقیقه/ساعت)" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="247,78,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="143" FontSize="16" FontWeight="Bold"/>
+        <telerik:Label Content="توضیحات"  HorizontalAlignment="Left" Margin="321,200,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="79" FontWeight="Bold" FontSize="16"/>
+        <telerik:Label Content="میز"  HorizontalAlignment="Left" Margin="360,158,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="40" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="DateMonth" HorizontalAlignment="Left" Height="30" Margin="99,113,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="73" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <TextBox x:Name="DateDay" HorizontalAlignment="Left" Height="30" Margin="177,113,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="73" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <telerik:Label Content="تاریخ (روز/ماه/سال)" FlowDirection="RightToLeft"  HorizontalAlignment="Left" Margin="253,113,0,0" VerticalAlignment="Top" FontFamily="B Yekan" Width="137" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="DateYear" HorizontalAlignment="Left" Height="30" Margin="20,113,0,0" TextWrapping="Wrap" Text="time" VerticalAlignment="Top" Width="74" FontFamily="Tahoma" FontWeight="Bold" IsEnabled="False" FontSize="18"/>
+        <Label x:Name="success" Content="با موفقیت اضافه شد" Opacity="0" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="112,221,0,0" VerticalAlignment="Top" Width="128" Background="#FF64E772" FontWeight="Bold"/>
+        <Label x:Name="noSuccess" Content="خطا در برنامه" Opacity="0" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="113,221,0,0" VerticalAlignment="Top" Width="128" Background="#FFF9B2B2" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,543,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="785">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.9">
+                    <GradientStop Color="#FF9BD7F6" Offset="0.303"/>
+                    <GradientStop Color="#FF989AF1" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="Images/cancel.png" Height="30" Margin="360,10,0,0" VerticalAlignment="Top" Width="30" MouseDown="BtnCancel" Cursor="Hand"/>
+        <Label Content="لیست بازیکن ها" HorizontalAlignment="Left" Margin="169,5,0,0" VerticalAlignment="Top" Width="112" FontWeight="Bold" FontFamily="B Yekan" Foreground="#FF632929" Height="35"/>
+        <Rectangle HorizontalAlignment="Left" Height="10" Margin="10,290,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="390" MouseDown="MoveWindows">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9BD7F6" Offset="0.303"/>
+                    <GradientStop Color="#FF6874FF" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>

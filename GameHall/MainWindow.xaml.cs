@@ -94,5 +94,10 @@ namespace GameHall
         {
             new UserList().Show();
         }
+
+        private void SHowPlayingList(object sender, RoutedEventArgs e)
+        {
+            new PlayingList().Show();
+        }
     }
 }

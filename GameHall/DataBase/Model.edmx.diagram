@@ -7,6 +7,7 @@
       <Diagram DiagramId="5d7e4d8b2c3946dda0a7b112e8661aca" Name="Diagram1">
         <EntityTypeShape EntityType="GameHalldbModel.player" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GameHalldbModel.playing" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameHalldbModel.hallTable" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
