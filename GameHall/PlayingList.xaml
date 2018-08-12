@@ -71,5 +71,6 @@
         </Rectangle>
         <Image HorizontalAlignment="Left" telerik:ScreenTip.Title="اضافه کردن" Source="Images/cancel.png" Height="45" Margin="725,10,0,0" VerticalAlignment="Top" Width="52" MouseDown="BtnCancel" Cursor="Hand"/>
         <Label Content="لیست بازیکن ها" HorizontalAlignment="Left" Margin="374,20,0,0" VerticalAlignment="Top" Width="112" FontWeight="Bold" FontFamily="B Yekan" Foreground="#FF632929" Height="35"/>
+        <Label x:Name="error" Content="خطا در برنامه" Opacity="0" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="649,507,0,0" VerticalAlignment="Top" Height="44" Width="128" FontWeight="Bold" Background="#FFF08282" FontSize="18"/>
     </Grid>
 </Window>

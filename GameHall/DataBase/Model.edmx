@@ -24,7 +24,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="playerId" Type="int" />
           <Property Name="description" Type="nvarchar" MaxLength="255" />
           <Property Name="startTime" Type="datetime" Nullable="false" />
@@ -32,16 +32,33 @@
           <Property Name="status" Type="bit" Nullable="false" />
           <Property Name="price" Type="float" />
           <Property Name="place" Type="int" Nullable="false" />
+          <Property Name="startTimeInSecond" Type="float" Nullable="false" />
+          <Property Name="endTimeInSecond" Type="float" />
+        </EntityType>
+        <EntityType Name="setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OneHourPrice" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GameHalldbModelStoreContainer">
           <EntitySet Name="hallTable" EntityType="Self.hallTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="player" EntityType="Self.player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="playing" EntityType="Self.playing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="setting" EntityType="Self.setting" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GameHalldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hallTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="player">
           <Key>
             <PropertyRef Name="Id" />
@@ -50,11 +67,17 @@
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityContainer Name="GameHalldbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hallTables" EntityType="Self.hallTable" />
+          <EntitySet Name="players" EntityType="Self.player" />
+          <EntitySet Name="playings" EntityType="GameHalldbModel.playing" />
+          <EntitySet Name="settings" EntityType="GameHalldbModel.setting" />
+        </EntityContainer>
         <EntityType Name="playing">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="playerId" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -62,18 +85,15 @@
           <Property Name="status" Type="Boolean" Nullable="false" />
           <Property Name="price" Type="Double" />
           <Property Name="place" Type="Int32" Nullable="false" />
+          <Property Name="startTimeInSecond" Type="Double" Nullable="false" />
+          <Property Name="endTimeInSecond" Type="Double" />
         </EntityType>
-        <EntityContainer Name="GameHalldbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="players" EntityType="Self.player" />
-          <EntitySet Name="playings" EntityType="Self.playing" />
-          <EntitySet Name="hallTables" EntityType="GameHalldbModel.hallTable" />
-        </EntityContainer>
-        <EntityType Name="hallTable">
+        <EntityType Name="setting">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="OneHourPrice" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -81,6 +101,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GameHalldbModelStoreContainer" CdmEntityContainer="GameHalldbEntities">
+          <EntitySetMapping Name="hallTables">
+            <EntityTypeMapping TypeName="GameHalldbModel.hallTable">
+              <MappingFragment StoreEntitySet="hallTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="number" ColumnName="number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="players">
             <EntityTypeMapping TypeName="GameHalldbModel.player">
               <MappingFragment StoreEntitySet="player">
@@ -93,21 +121,23 @@
           <EntitySetMapping Name="playings">
             <EntityTypeMapping TypeName="GameHalldbModel.playing">
               <MappingFragment StoreEntitySet="playing">
+                <ScalarProperty Name="endTimeInSecond" ColumnName="endTimeInSecond" />
+                <ScalarProperty Name="startTimeInSecond" ColumnName="startTimeInSecond" />
                 <ScalarProperty Name="place" ColumnName="place" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="playerId" ColumnName="playerId" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="startTime" ColumnName="startTime" />
-                <ScalarProperty Name="endTime" ColumnName="endTime" />
-                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="playerId" ColumnName="playerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="hallTables">
-            <EntityTypeMapping TypeName="GameHalldbModel.hallTable">
-              <MappingFragment StoreEntitySet="hallTable">
-                <ScalarProperty Name="number" ColumnName="number" />
+          <EntitySetMapping Name="settings">
+            <EntityTypeMapping TypeName="GameHalldbModel.setting">
+              <MappingFragment StoreEntitySet="setting">
+                <ScalarProperty Name="OneHourPrice" ColumnName="OneHourPrice" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

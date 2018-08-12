@@ -53,13 +53,15 @@ namespace GameHall
         {
             var db = new GameHalldbEntities();
             var time= DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            var secondLast = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
 
             var newPlaying = new playing
             {
                 startTime = Convert.ToDateTime(time),
                 description = information.Text,
                 status = false,
-                place = Convert.ToInt32(table.Text)
+                place = Convert.ToInt32(table.Text),
+                startTimeInSecond = secondLast
             };
 
             db.playings.Add(newPlaying);

@@ -4,10 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5d7e4d8b2c3946dda0a7b112e8661aca" Name="Diagram1">
-        <EntityTypeShape EntityType="GameHalldbModel.player" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GameHalldbModel.playing" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GameHalldbModel.hallTable" Width="1.5" PointX="0.75" PointY="4.75" />
+      <Diagram DiagramId="7d226867cc46484a81951ff544a8e79b" Name="Diagram1">
+        <EntityTypeShape EntityType="GameHalldbModel.hallTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameHalldbModel.player" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameHalldbModel.playing" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GameHalldbModel.setting" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

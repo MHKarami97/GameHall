@@ -14,7 +14,7 @@ namespace GameHall.DataBase
     
     public partial class playing
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public Nullable<int> playerId { get; set; }
         public string description { get; set; }
         public System.DateTime startTime { get; set; }
@@ -22,5 +22,7 @@ namespace GameHall.DataBase
         public bool status { get; set; }
         public Nullable<double> price { get; set; }
         public int place { get; set; }
+        public double startTimeInSecond { get; set; }
+        public Nullable<double> endTimeInSecond { get; set; }
     }
 }

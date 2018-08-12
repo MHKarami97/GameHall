@@ -25,8 +25,9 @@ namespace GameHall.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<hallTable> hallTables { get; set; }
         public virtual DbSet<player> players { get; set; }
         public virtual DbSet<playing> playings { get; set; }
-        public virtual DbSet<hallTable> hallTables { get; set; }
+        public virtual DbSet<setting> settings { get; set; }
     }
 }

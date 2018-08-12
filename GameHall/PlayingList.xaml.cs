@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,19 +42,77 @@ namespace GameHall
             Close();
         }
 
-        private void FinishTime(object sender, RadRoutedEventArgs radRoutedEventArgs)
+        private void FinishClick(object sender, RoutedEventArgs e)
         {
-            var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            var db = new GameHalldbEntities();
 
+            var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");           
+            var secondLast= DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
+
+            var getSetting = (from a in db.settings
+                where a.Id.Equals(1)
+                select a).SingleOrDefault();
+
+            if (getSetting != null)
+            {
+                var oneHourPrice = getSetting.OneHourPrice;                
+
+                object item = playerList.SelectedItem;
+                var id = ((playing)item).Id;
+
+                var qGet = (from a in db.playings
+                    where a.Id.Equals(id)
+                    select a).SingleOrDefault();
+
+                if (qGet != null)
+                {
+                    var timeDifference = secondLast - qGet.startTimeInSecond;
+                    var priceForOneSecond = (double)oneHourPrice / 3600;
+                    var totalPrice = timeDifference * priceForOneSecond;
+
+                    qGet.endTime = Convert.ToDateTime(time);
+                    qGet.status = true;
+                    qGet.price = totalPrice;
+                    qGet.endTimeInSecond = secondLast;
+
+                    db.playings.Attach(qGet);
+                    db.Entry(qGet).State = System.Data.Entity.EntityState.Modified;
+
+                    if (Convert.ToBoolean(db.SaveChanges()))
+                    {
+                        var qGetName = (from a in db.players
+                            where a.Id.Equals(qGet.playerId)
+                            select a).SingleOrDefault();
+
+                        if (qGetName != null)
+                        {
+                            var username = qGetName.name + qGetName.lastname;
+                            var lastPrice = Convert.ToInt64(qGet.price);
+                            new ShowFinish(username, Convert.ToString(qGet.startTime, CultureInfo.InvariantCulture), Convert.ToString(qGet.endTime), Convert.ToString(lastPrice)).Show();
+                            Close();
+                        }
+                        else
+                        {
+                            var lastPrice = Convert.ToInt64(qGet.price);
+                            new ShowFinish("بدون نام", Convert.ToString(qGet.startTime, CultureInfo.InvariantCulture), Convert.ToString(qGet.endTime, CultureInfo.InvariantCulture), Convert.ToString(lastPrice)).Show();
+                            Close();
+                        }                                               
+                    }
+                    else
+                    {
+                        error.Opacity = 1;
+                    }
+                }
+                else
+                {
+                    error.Opacity = 1;
+                }                
+            }
         }
 
-        private void FinishClick(object sender, RadRoutedEventArgs e)
+        private void RowContextMenu(object sender,EventArgs eventArgs)
         {
-            RadMenuItem item = e.OriginalSource as RadMenuItem;
-            //implement the logic regarding the instance here.
-            //MessageBox.Show(e);
+
         }
-
-
     }
 }
