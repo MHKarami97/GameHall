@@ -2,12 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using GameHall.DataBase;
-using Telerik.Windows;
-using Telerik.Windows.Controls;
-using Telerik.Windows.Controls.GridView;
 
 namespace GameHall
 {
@@ -108,11 +104,6 @@ namespace GameHall
                     error.Opacity = 1;
                 }                
             }
-        }
-
-        private void RowContextMenu(object sender,EventArgs eventArgs)
-        {
-
         }
     }
 }

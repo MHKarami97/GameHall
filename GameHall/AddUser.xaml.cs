@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Ink;
-using System.Reflection;
 using GameHall.DataBase;
 
 namespace GameHall
@@ -22,7 +17,7 @@ namespace GameHall
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
+           
         }
 
         private void BtnCancel(object sender, MouseButtonEventArgs e)

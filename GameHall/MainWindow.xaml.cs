@@ -27,7 +27,7 @@ namespace GameHall
 
         NotifyIcon _icon = new NotifyIcon();
 
-        public NotifyIcon GetIcon1()
+        private NotifyIcon GetIcon1()
         {
             return _icon;
         }
